@@ -32,7 +32,17 @@
   urlcolor=red,
   linkcolor=tealsection}
 
+\usepackage[T1]{fontenc}
+\usepackage{listings}
 
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{60,179,113}
+\lstset{
+  language=Python,
+  basicstyle=\footnotesize\fontfamily{fvm}\selectfont,
+  keywordstyle=\color{keywords},
+  commentstyle=\color{comments}\emph
+}
 
 % ========================================
 \newenvironment<>{exercise}[1]
@@ -67,8 +77,8 @@
 {
 \setbeamercolor{frametitle}{fg=white,bg=green!60!blue}
 \begin{frame} \justifying
-  \frametitle{Ejemplo #1}
-  \framesubtitle{ #2}
+  \frametitle{Ejemplo: #1}
+  \framesubtitle{\insertsubsectionhead #2}
   
 }
 % content
@@ -76,18 +86,13 @@
 \end{frame}
 }
 % ========================================
-\newenvironment<>{framebb}[1] % for blackboard exercises
+\newenvironment<>{framecode}[1][] % for coding
 {
-%\usebackgroundtemplate{\includegraphics[scale=0.3]{blackboard-logo.png}}
 \setbeamercolor{frametitle}{fg=white,bg=black!85}
-\begin{frame} \justifying
-  \frametitle{%
-  \includegraphics[scale=0.08]{blackboard-logo.png} \hspace{5mm} Contenidos y Materiales/Homework/hw\textunderscore #1
-  }
-%{\centering \includegraphics[scale=0.5]{BlackBoardSymbol.png}\par}
-%\vspace{5mm}
-Hacer actividad en Parejas. Cada alumno subirá la \alert{actividad a su cuenta individual} de Blackboard \\[5mm]
-}
+\begin{frame}[environment=fr,#1]
+\frametitle{}
+\framesubtitle{}
+}%
 {
 \end{frame}
 }
@@ -95,9 +100,9 @@ Hacer actividad en Parejas. Cada alumno subirá la \alert{actividad a su cuenta 
 \newenvironment<>{frameact}[1] % For Activities
 {
 %\usebackgroundtemplate{\includegraphics[scale=0.3]{blackboard-logo.png}}
-\setbeamercolor{frametitle}{fg=white,bg=green!60!black}
+\setbeamercolor{frametitle}{fg=white,bg=red!60!black}
 \begin{frame}\justifying
-  \frametitle{Actividad #1}
+  \frametitle{Actividad: #1}
   \framesubtitle{}
 %{\centering \includegraphics[scale=0.5]{BlackBoardSymbol.png}\par}
 %\vspace{5mm}
@@ -115,8 +120,8 @@ progressbar=frametitle%
 ]{metropolis}
 %\usetheme{Boadilla}
 
-\title{Optimización de Sistemas}
-\subtitle{Modelos Matemáticos} % 6 hours. 2 sessions
+\title{Modelos Matemáticos}
+\subtitle{Asignatura: Optimización de Sistemas} % 6 hours. 2 sessions
 
 
 \institute{UNIVERSIDAD ANÁHUAC MÉXICO}
@@ -151,6 +156,9 @@ progressbar=frametitle%
 \input{taxonomy}
 \input{formulation}
 
+\begin{frame}
+  \maketitle
+\end{frame}
 
 
 \end{document}
