@@ -4,8 +4,26 @@ Una compañía química produce dos productos, $X$ e $Y$. Cada unidad de product
     
 \end{frameExample}
 
+\begin{frameExample}{Mezcla de Productos}{}
+  Sea $x_1 , x_2, x_z$ el número de productos $X$, $Y$, $Z$ que se van a producir, tenemos que:
+  \begin{align*}
+    x_z & = \text{número de productos tipo } Z \\
+        & = \text{número de unidades vendidas de } Z + \text{unidades destruidas }Z\\
+          &= x_3 + x_4
+  \end{align*}
+\end{frameExample}
 
-
+\begin{frameExample}{Mezcla de Productos}{}
+  \begin{flalign*}
+    \max Z = 10x_1 + 20x_2 + 6x_3 - 4x_4 & \\
+    3x_1 + 4x_2 & \leq 20\\
+    4x_1 + 5x_2 & \leq 26\\
+    x_3 & \leq 5\\[3mm]
+    2Y & = Z\\
+    2x_2 & = x_3 + x_4\\[5mm]
+    x_1, x_2, x_3, x_4 & \geq 0
+  \end{flalign*}
+\end{frameExample}
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../slides"
